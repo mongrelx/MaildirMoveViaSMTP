@@ -5,7 +5,7 @@
   do  ( echo "helo `hostname`"; 
         from=$(grep  "^From" "$fnam" | awk {'print $NF;exit'}) ; 
         echo "MAIL FROM:${from}"; 
-        echo "rcpt to: <example@example.com>"; 
+        echo "rcpt to: <$1>"; 
         echo "data";  
         cat "$fnam"; 
         echo "."; 
